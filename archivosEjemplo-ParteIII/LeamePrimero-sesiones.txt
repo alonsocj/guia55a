@@ -1,0 +1,28 @@
+**************************************************
+PUESTA EN MARCHA Y PRUEBA DEL EJEMPLO-JSTL-EL
++con sesiones y control de accesos
+**************************************************
+
+En esta carpeta encuentra lo siguiente:
+1. script sql para crear la base de datos del proyecto
+   test-sesiones.sql 
+   ejecute este script en el servidor de base de datos 
+   antes de poner a funcionar el proyecto en netbean, así:
+   *primero ponga a funcionar el servidor de base de datos
+   **segundo conectese al servidor, importe el archivo 
+   test-sesiones.sql y ejecute el script para crear la
+   base de datos e insertar registros 
+
+2. Proyecto en netbean, carpeta comprimida.
+   Ejemplo_JSTL_EL_Sessions.rar carpeta de proyecto de netbeans, la cual
+   debera extraer dentro de la carpeta:  NetBeansProjects (es la
+   carpeta en la que netbean guarda los proyectos en Documentos)
+   y a continuación deberá ejecutar netbeans, abrir el projecto
+   y ejecutarlo.
+
+3. Pruebas: ingrese con el navegador a 
+   http://localhost:8080/Ejemplo_JSTL_EL_Sessions/
+   pruebe las distintas paginas, a la vez que revisa el codigo
+   respectivo en las jsp del proyecto en netbeans para que se
+   comprenda mejor el funcionamiento.
+

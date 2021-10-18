@@ -1,0 +1,24 @@
+PUESTA EN MARCHA Y PRUEBA DEL EJEMPLO-JSTL-EL
+
+En esta carpeta encuentra lo siguiente:
+1. script sql para crear la base de datos del proyecto
+   test.sql 
+   ejecute este script en el servidor de base de datos 
+   antes de poner a funcionar el proyecto en netbean, así:
+   *primero ponga a funcionar el servidor de base de datos
+   **segundo conectese al servidor, importe el archivo test.sql y 
+     ejecute el script para crear base de datos e insertar registros 
+
+2. Proyecto en netbean, carpeta comprimida.
+   Ejemplo_JSTL_EL.rar carpeta de proyecto de netbeans, la cual
+   debera extraer dentro de la carpeta:  NetBeansProjects (es la
+   carpeta en la que netbean guarda los proyectos en Documentos)
+   y a continuación deberá ejecutar netbeans, abrir el proyecto
+   y ejecutarlo.(antes de ejecutar agregue el servidor tomcat8)
+
+3. Pruebas: ingrese con el navegador a 
+   http://localhost:8080/Ejemplo_JSTL_EL/
+   pruebe las distintas paginas, a la vez que revisa el codigo
+   respectivo en las jsp del proyecto en netbeans para que se
+   comprenda mejor el funcionamiento.
+
