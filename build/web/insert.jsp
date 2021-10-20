@@ -8,26 +8,23 @@
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
+<%@ include file="fuentedatos.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>INICIO</title>
     </head>
-    <body>
-        <sql:setDataSource var ="datos" driver="org.mariadb.jdbc.Driver"
-                           url="jdbc:mariadb://localhost:3308/biblioteca"
-                           user="root" password=""/>
-        
-        <sql:update dataSource="${datos}" var="result">
-            INSERT INTO libro (isbn,titulo,autor,editorial) VALUES(?,?,?,?);
+    <body>        
+        <sql:update dataSource="${Books}" var="result">
+            INSERT INTO libros (isbn,titulo,autor,editorial) VALUES(?,?,?,?);
             <sql:param value="${param.isbn}"/>
             <sql:param value="${param.titulo}"/>
             <sql:param value="${param.autor}"/>
             <sql:param value="${param.editorial}"/>
         </sql:update>
-            <sql:query dataSource="${datos}" var="result">
-                SELECT * FROM libro WHERE isbn = ?;
+            <sql:query dataSource="${Books}" var="result">
+                SELECT * FROM libros WHERE isbn = ?;
                 <sql:param value="$isbn"/>
             </sql:query>
             <h1>Se ha registrado exitosamente el libro:</h1>

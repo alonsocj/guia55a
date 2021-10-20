@@ -23,7 +23,7 @@
         <p>Título: <c:out value = "${param.Titulo}"/></p>
         <p>Autor: <c:out value = "${param.Autor}"/></p>
         <p>Editorial: <c:out value = "${param.Editorial}"/></p>   
-        <sql:update dataSource="${datos}" var="result">
+        <sql:update dataSource="${Books}" var="result">
             DELETE FROM libros WHERE Id=?;
             <sql:param value="${param.Id}"/>
         </sql:update>

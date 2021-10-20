@@ -24,7 +24,7 @@
             Editorial: <input type="text" name="editorial">
             <input type="SUBMIT" name="enviar" value="Enviar">
         </form>
-        <sql:query dataSource="${fuenteDatos}" var="data">
+        <sql:query dataSource="${Books}" var="data">
             SELECT * FROM libros;
         </sql:query>
         <table>
