@@ -89,12 +89,12 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'usuario1','contraseña123','Miguel',0);
-INSERT INTO `usuarios` VALUES (2,'usuario2','contraseña123','Christian',0);
-INSERT INTO `usuarios` VALUES (3,'usuario3','contraseña123','Diego',1);
-INSERT INTO `usuarios` VALUES (4,'usuario4','contraseña123','Alonso',1);
-INSERT INTO `usuarios` VALUES (5,'usuario5','contraseña123','Carolina',2);
-INSERT INTO `usuarios` VALUES (6,'usuario6','contraseña123','Gustavo',2);
+INSERT INTO `usuarios` VALUES (1,'Anonimo','contraseña123','Miguel',0);
+INSERT INTO `usuarios` VALUES (2,'Anonimo','contraseña123','Christian',0);
+INSERT INTO `usuarios` VALUES (3,'Digitador','contraseña123','Diego',1);
+INSERT INTO `usuarios` VALUES (4,'Digitador','contraseña123','Alonso',1);
+INSERT INTO `usuarios` VALUES (5,'Mantenimiento','contraseña123','Carolina',2);
+INSERT INTO `usuarios` VALUES (6,'Mantenimiento','contraseña123','Gustavo',2);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
