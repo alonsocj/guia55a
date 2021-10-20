@@ -8,6 +8,7 @@
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
+<%@ include file="fuentedatos.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,9 +16,6 @@
         <title>Actualizar</title>
     </head>
     <body>
-        <sql:setDataSource var ="datos" driver="org.mariadb.jdbc.Driver"
-                           url="jdbc:mariadb://localhost:3308/biblioteca"
-                           user="root" password=""/>
         <h1>Actualizando datos...</h1>
         <form name="actualizar" method="get" action="javascript:actualizar();">
             ISBN: <input type="text" name="isbn" value="${param.isbn}">
