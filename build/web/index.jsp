@@ -45,7 +45,7 @@
                     <td><c:out value="${row.titulo}"/></td>
                     <td><c:out value="${row.autor}"/></td>
                     <td><c:out value="${row.editorial}"/></td>
-                    
+                    <td><a href="frmupdate.jsp?id=${row.Id}">Actualizar</a></td>
                     <td><a href="delete.jsp?Id=${row.Id}">Eliminar</a></td>
                 </tr>
             </c:forEach>
