@@ -17,7 +17,7 @@
     </head>
     <body>
         <sql:setDataSource var ="fuenteDatos" driver="org.mariadb.jdbc.Driver"
-                           url="jdbc:mariadb://localhost:3308/biblioteca"
+                           url="jdbc:mariadb://localhost:3308/grupo05"
                            user="root" password=""/>
         <h1>Hello World!</h1>
         <form name="insertar" method="post" action="javascript:insertar();">
@@ -28,7 +28,7 @@
             <input type="SUBMIT" name="enviar" value="Enviar">
         </form>
         <sql:query dataSource="${fuenteDatos}" var="data">
-            SELECT * FROM libro;
+            SELECT * FROM libros;
         </sql:query>
         <table>
             <tr>
