@@ -20,17 +20,11 @@
                            url="jdbc:mariadb://localhost:3308/biblioteca"
                            user="root" password=""/>
         <p>Se ha eliminado exitosamente el libro:</p>
-        <sql:query dataSource = "${datos}" var = "result">
-            SELECT * from libro WHERE Id=?;
-            <sql:param value="${param.Id}"/>
-        </sql:query>
-        <c:forEach var = "row" items = "${result.rows}">
-            <p>Id: <c:out value = "${row.Id}"/></p>
-            <p>ISBN: <c:out value = "${row.ISBN}"/></p>
-            <p>Título: <c:out value = "${row.Titulo}"/></p>
-            <p>Autor: <c:out value = "${row.Autor}"/></p>
-            <p>Editorial: <c:out value = "${row.Editorial}"/></p>
-        </c:forEach>    
+        <p>Id: <c:out value = "${param.Id}"/></p>
+        <p>ISBN: <c:out value = "${param.ISBN}"/></p>
+        <p>Título: <c:out value = "${param.Titulo}"/></p>
+        <p>Autor: <c:out value = "${param.Autor}"/></p>
+        <p>Editorial: <c:out value = "${param.Editorial}"/></p>   
         <sql:update dataSource="${datos}" var="result">
             DELETE FROM libro WHERE Id=?;
             <sql:param value="${param.Id}"/>
