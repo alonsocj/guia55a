@@ -45,6 +45,8 @@
                     <td><c:out value="${row.titulo}"/></td>
                     <td><c:out value="${row.autor}"/></td>
                     <td><c:out value="${row.editorial}"/></td>
+                    
+                    <td><a href="delete.jsp?Id=${row.Id}ISBN=${row.isbn}Titulo=${row.titulo}Autor=${row.autor}Editorial=${row.editorial}">Eliminar</a></td>
                 </tr>
             </c:forEach>
         </table>
