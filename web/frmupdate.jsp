@@ -12,24 +12,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Actualizar</title>
     </head>
     <body>
-        <sql:setDataSource var ="fuenteDatos" driver="org.mariadb.jdbc.Driver"
+        <sql:setDataSource var ="datos" driver="org.mariadb.jdbc.Driver"
                            url="jdbc:mariadb://localhost:3308/biblioteca"
                            user="root" password=""/>
-        <h1>Hello World!</h1>
-        
-        <sql:query dataSource="${fuentedatos}" var="result">
-                SELECT * FROM libro WHERE Id = ?;
-            </sql:query>
-            <c:forEach var="row" items="${result.rows}">
-            <p>ISBN: <c:out value="${row.isbn}"/></p>
-            <p>Titulo: <c:out value="${row.titulo}"/></p>
-            <p>Autor: <c:out value="${row.autor}"/></p>
-            <p>Editorial: <c:out value="${row.editorial}"/></p>
-            </c:forEach>
-            <a href="index.jsp">ACTUALIZAR</a>
-        
+        <h1>Actualizando datos...</h1>
+        <form name="actualizar" method="get" action="javascript:actualizar();">
+            ISBN: <input type="text" name="isbn" value="${param.isbn}">
+            Titulo: <input type="text" name="titulo" value = "${param.titulo}">
+            Autor: <input type="text" name="autor" value = "${param.autor}">
+            Editorial: <input type="text" name="editorial" value = "${param.editorial}">
+            <input type="SUBMIT" name="actualizar" value="Actualizar">
+        </form>
+            <script type="application/javascript" src="public/js/update.js"></script>
     </body>
 </html>
