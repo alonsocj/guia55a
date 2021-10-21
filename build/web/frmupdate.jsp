@@ -35,7 +35,7 @@
         </c:if>           
             <script type="application/javascript" src="public/js/update.js"></script>
         <c:if test="${sessionScope.nivel != 2}">
-            <c:redirect url='recepcion.jsp'>
+            <c:redirect url='error.jsp'>
                 <c:param name="operacion" value="${pageId}"/>
                 <c:param name="logeado" value="not"/>
             </c:redirect>

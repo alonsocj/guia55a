@@ -9,6 +9,8 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
 <%@ include file="fuentedatos.jsp" %>
+<c:set var="pageId" value="Insertar" />
+<c:set var="standalone" value="not" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +23,13 @@
                 <c:param name="tipo" value="parametro"/>
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
-        </c:if>           
+        </c:if>     
+        <c:if test="${sessionScope.nivel != 1}">
+            <c:redirect url='error.jsp'>
+                <c:param name="operacion" value="${pageId}"/>
+                <c:param name="logeado" value="not"/>
+            </c:redirect>
+        </c:if>
         <sql:update dataSource="${Books}" var="result">
             INSERT INTO libros (isbn,titulo,autor,editorial) VALUES(?,?,?,?);
             <sql:param value="${param.isbn}"/>
@@ -35,5 +43,7 @@
         <p>Autor: ${param.autor}</p>
         <p>Editorial: ${param.editorial}</p>
         <a href="index.jsp">ACEPTAR</a>
+       
+        
     </body>
 </html>

@@ -9,6 +9,8 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
 <%@ include file="fuentedatos.jsp" %>
+<c:set var="pageId" value="Eliminar" />
+<c:set var="standalone" value="not" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,12 +32,18 @@
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:if>           
-        
+        <c:if test="${sessionScope.nivel != 2}">
+            <c:redirect url='error.jsp'>
+                <c:param name="operacion" value="${pageId}"/>
+                <c:param name="logeado" value="not"/>
+            </c:redirect>
+        </c:if>
         <sql:update dataSource="${Books}" var="result">
             DELETE FROM libros WHERE isbn=?;
             <sql:param value="${param.ISBN}"/>
         </sql:update>
         <a href="index.jsp">ACEPTAR</a>
+        
     </body>
     </body>
 </html>

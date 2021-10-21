@@ -26,7 +26,12 @@
                 <c:param name="destino" value="index.jsp"/>
             </c:redirect>
         </c:if>           
-        
+        <c:if test="${sessionScope.nivel != 2}">
+            <c:redirect url='error.jsp'>
+                <c:param name="operacion" value="${pageId}"/>
+                <c:param name="logeado" value="not"/>
+            </c:redirect>
+        </c:if>
         <sql:update dataSource="${Books}" var="result">
              UPDATE libros SET titulo= ?, autor= ?, editorial= ? WHERE  isbn= ?
             <sql:param value="${param.titulo}"/>
