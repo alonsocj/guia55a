@@ -11,6 +11,7 @@
 <%@ include file="fuentedatos.jsp" %>
 <c:set var="pageId" value="Index" />
 <c:set var="standalone" value="not" />
+<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,16 +32,14 @@
 
             <c:if test="${not empty sessionScope.user}">
               <c:if test="${sessionScope.user != 'Anonimo'}">
-              <div style="color:white;font-size:5mm;">
+              <div class="user">
                   Usuario: ${sessionScope.user}</div><br>
                   <a style="color:white" href="logout.jsp">Logout</a>
               </c:if>
           </c:if>
         </nav><br>         
         <h1>Biblioteca del Grupo 5 TPI115</h1>
-            
-         
-       
+
         <c:if test="${sessionScope.nivel eq 1}">
         <form name="insertar" method="post" action="javascript:insertar();">
             ISBN: <input type="text" name="isbn">
@@ -60,6 +59,9 @@
                 <th>titulo</th>
                 <th>autor</th>
                 <th>editorial</th>
+                <c:if test="${sessionScope.nivel eq 2}">
+                <th colspan="2">Acciones</th>
+                </c:if>
             </tr>
             <c:forEach var="row" items="${data.rows}">
                 <tr>

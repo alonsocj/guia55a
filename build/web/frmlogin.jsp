@@ -11,7 +11,7 @@
 
 <%-- Manejo de Base de datos--%>
 <%@ include file="fuentedatos.jsp" %>
-
+<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,21 +20,21 @@
         
         <!-- Creacion de Formulario -->
        
-    <h1>Inicio de Sesion</h1>    
+    <h1 class="tituloform">Inicio de Sesion</h1>    
   
     <!--En caso de campos vacios -->
     
     <c:if test="${not empty param.msg}">
-        <p>Error: ${param.msg}</p>
+        <p class="errormessage">Error: ${param.msg}</p>
     </c:if>
     
     <!-- el action del form capturara lo que contenga el validar.jsp -->
-    <form name="login" action="validar.jsp" method="post">
-        <label for="usuario">Usuario:</label>
-        <input type="text" name = "Usuario" size="40">
-        <label for="clave">Clave:</label>
-        <input type="text" name = "Password" size="40">
-        <input type="submit" value="Iniciar Sesion">
+    <form name="login" action="validar.jsp" method="post" class="formstyle">
+        <label for="usuario" class="etiquetas">Usuario:</label>
+        <input type="text" name = "Usuario" size="40"><br><br>
+        <label for="clave"  class="etiquetas">Clave:</label>
+        <input type="text" name = "Password" size="40"><br><br>
+        <input type="submit" value="Iniciar Sesion" class="boton">
     </form>
         
         

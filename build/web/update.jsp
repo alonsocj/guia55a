@@ -11,7 +11,7 @@
 
 <!--Base de datos -->
 <%@ include file="fuentedatos.jsp" %>
-
+<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>

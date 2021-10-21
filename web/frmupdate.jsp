@@ -12,6 +12,7 @@
 <c:set var="pageId" value="Actualizar" />
 <c:set var="standalone" value="not" />
 <%@ include file="fuentedatos.jsp" %>
+<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,13 +20,13 @@
         <title>Actualizar</title>
     </head>
     <body>
-        <h1>Actualizando datos...</h1>
-        <form name="actualizar" method="get" action="javascript:actualizar();">
+        <h1 class="h1title">Actualizando datos...</h1>
+        <form name="actualizar" method="get" action="javascript:actualizar();" class="formsytleupdate">
             ISBN: <input type="text" name="isbn" value="${param.isbn}"></br></br>
             Titulo: <input type="text" name="titulo" value = "${param.titulo}"></br></br>
             Autor: <input type="text" name="autor" value = "${param.autor}"></br></br>
             Editorial: <input type="text" name="editorial" value = "${param.editorial}"></br></br>
-            <input type="SUBMIT" name="actualizar" value="Actualizar">
+            <input type="SUBMIT" name="actualizar" value="Actualizar" class="boton">
         </form>
         <c:if test="${empty param.titulo or empty param.autor or empty param.editorial or empty param.isbn}">
             <c:redirect url="error.jsp">
