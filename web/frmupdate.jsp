@@ -6,8 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
+<c:set var="pageId" value="Actualizar" />
+<c:set var="standalone" value="not" />
 <%@ include file="fuentedatos.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -25,5 +28,11 @@
             <input type="SUBMIT" name="actualizar" value="Actualizar">
         </form>
             <script type="application/javascript" src="public/js/update.js"></script>
+        <c:if test="${sessionScope.nivel != 2}">
+            <c:redirect url='recepcion.jsp'>
+                <c:param name="operacion" value="${pageId}"/>
+                <c:param name="logeado" value="not"/>
+            </c:redirect>
+        </c:if>
     </body>
 </html>
