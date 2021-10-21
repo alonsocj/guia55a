@@ -22,10 +22,18 @@
         <p>ISBN: <c:out value = "${param.ISBN}"/></p>
         <p>Título: <c:out value = "${param.Titulo}"/></p>
         <p>Autor: <c:out value = "${param.Autor}"/></p>
-        <p>Editorial: <c:out value = "${param.Editorial}"/></p>   
+        <p>Editorial: <c:out value = "${param.Editorial}"/></p>
+        
+        <c:if test="${empty param.ISBN}">
+            <c:redirect url="error.jsp">
+                <c:param name="tipo" value="parametro"/>
+                <c:param name="destino" value="index.jsp"/>
+            </c:redirect>
+        </c:if>           
+        
         <sql:update dataSource="${Books}" var="result">
-            DELETE FROM libros WHERE Id=?;
-            <sql:param value="${param.Id}"/>
+            DELETE FROM libros WHERE isbn=?;
+            <sql:param value="${param.ISBN}"/>
         </sql:update>
         <a href="index.jsp">ACEPTAR</a>
     </body>

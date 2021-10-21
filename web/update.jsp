@@ -20,7 +20,13 @@
     </head>
     <body>
         <h1>Actualizar Registro</h1>
-
+        <c:if test="${empty param.titulo or empty param.autor or empty param.editorial or empty param.isbn}">
+            <c:redirect url="error.jsp">
+                <c:param name="tipo" value="parametro"/>
+                <c:param name="destino" value="index.jsp"/>
+            </c:redirect>
+        </c:if>           
+        
         <sql:update dataSource="${Books}" var="result">
              UPDATE libros SET titulo= ?, autor= ?, editorial= ? WHERE  isbn= ?
             <sql:param value="${param.titulo}"/>

@@ -51,7 +51,7 @@
                 <script>
             setTimeout(function () {
                 location.href = "index.jsp";
-            }, 5000);
+            }, 1000);
         </script>
     </body>
 </html>

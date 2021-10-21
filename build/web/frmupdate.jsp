@@ -27,6 +27,12 @@
             Editorial: <input type="text" name="editorial" value = "${param.editorial}"></br></br>
             <input type="SUBMIT" name="actualizar" value="Actualizar">
         </form>
+        <c:if test="${empty param.titulo or empty param.autor or empty param.editorial or empty param.isbn}">
+            <c:redirect url="error.jsp">
+                <c:param name="tipo" value="parametro"/>
+                <c:param name="destino" value="index.jsp"/>
+            </c:redirect>
+        </c:if>           
             <script type="application/javascript" src="public/js/update.js"></script>
         <c:if test="${sessionScope.nivel != 2}">
             <c:redirect url='recepcion.jsp'>

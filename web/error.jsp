@@ -13,7 +13,7 @@
                     Error, intento de ejecutar una jsp, la cual debe estar en un contexto dentro de otra jsp
                 </c:when>
                 <c:when test="${param.tipo eq 'parametro'}">
-                    Error, intento de ejecutar una jsp, sin proporcionar los parametros necesarios
+                    Error, intento de ejecutar una instrucción, sin proporcionar los parametros necesarios, se le redigirá a la página de inicio.
                 </c:when>                
             </c:choose>
   
@@ -21,7 +21,7 @@
                   <script>
                 setTimeout(function () {
                     location.href = "${param.destino}";
-                }, 2000);
+                }, 8000);
             </script>
     </body>
 </html>

@@ -15,7 +15,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>AGREGAR</title>
     </head>
-    <body>        
+    <body>  
+        <c:if test="${empty param.titulo or empty param.autor or empty param.editorial or empty param.isbn}">
+            <c:redirect url="error.jsp">
+                <c:param name="tipo" value="parametro"/>
+                <c:param name="destino" value="index.jsp"/>
+            </c:redirect>
+        </c:if>           
         <sql:update dataSource="${Books}" var="result">
             INSERT INTO libros (isbn,titulo,autor,editorial) VALUES(?,?,?,?);
             <sql:param value="${param.isbn}"/>
