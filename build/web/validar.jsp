@@ -10,9 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Validar Usuarios</title>
+        <meta name="author" content="Miguel Angel Amaya Rodriguez">
+        <meta name="author" content="Christian Javier Ayala Guerra">
+        <meta name="author" content="Diego José Ayala Guerra">
+        <meta name="author" content="Luis Alonso Cornejo Jiménez">
+        <meta name="author" content="Carolina Isabel Pineda Delgado">
+        <meta name="author" content="José Gustavo Pineda Delgado">
+        <meta name="author" content="William Enrique Vásquez Mancia">
+        <meta name="keywords" content="JSP, GUIA 55ab">
+        <meta name="description" content="Guia 55ab validar.jsp">
+        <link rel="stylesheet" href="public/css/sytle.css">
     </head>
     <body>
-        <h1>Verificacion de Usuarios</h1>
+        <h1 class="h1title">Verificacion de Usuarios</h1>
         
     <!--Verificacion de que el campo no este vacio -->
         <c:if test="${empty param.Usuario or empty param.Password}">
@@ -47,7 +57,7 @@
     <c:set var="user" value="${datos.rows[0].login}" scope="session" />
         <c:set var="nombre" value="${datos.rows[0].nombre}" scope="session" />
         <c:set var="nivel" value="${datos.rows[0].nivel}" scope="session" />
-        <p style="color:red;"><br><br>En unos segundos se redirijirá a index</p>
+        <p style="color:red;" class="redireccion""><br>En unos segundos se redirijirá a index</p>
                 <script>
             setTimeout(function () {
                 location.href = "index.jsp";

@@ -12,20 +12,29 @@
 <c:set var="pageId" value="Actualizar" />
 <c:set var="standalone" value="not" />
 <%@ include file="fuentedatos.jsp" %>
-<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Actualizar</title>
+        <meta name="author" content="Miguel Angel Amaya Rodriguez">
+        <meta name="author" content="Christian Javier Ayala Guerra">
+        <meta name="author" content="Diego José Ayala Guerra">
+        <meta name="author" content="Luis Alonso Cornejo Jiménez">
+        <meta name="author" content="Carolina Isabel Pineda Delgado">
+        <meta name="author" content="José Gustavo Pineda Delgado">
+        <meta name="author" content="William Enrique Vásquez Mancia">
+        <meta name="keywords" content="JSP, GUIA 55ab">
+        <meta name="description" content="Guia 55ab frmupdate.jsp">
+        <link rel="stylesheet" href="public/css/sytle.css">
     </head>
     <body>
         <h1 class="h1title">Actualizando datos...</h1>
         <form name="actualizar" method="get" action="javascript:actualizar();" class="formsytleupdate">
-            ISBN: <input type="text" name="isbn" value="${param.isbn}"></br></br>
-            Titulo: <input type="text" name="titulo" value = "${param.titulo}"></br></br>
-            Autor: <input type="text" name="autor" value = "${param.autor}"></br></br>
-            Editorial: <input type="text" name="editorial" value = "${param.editorial}"></br></br>
+            ISBN: <input type="text" name="isbn" value="${param.isbn}" pattern="[0-9]{13}" required title="Debe ingresar 13 digitos"></br></br>
+            Titulo: <input type="text" name="titulo" value = "${param.titulo}" pattern="[a-zA-Z0-9\,]{0,50}" title="Solo debe ingresar texto y maximo 50 caracteres"></br></br>
+            Autor: <input type="text" name="autor" value = "${param.autor}" pattern="[a-zA-Z\,]{0,50}" title="Solo debe ingresar texto sin acento y maximo 50 caracteres"></br></br>
+            Editorial: <input type="text" name="editorial" value = "${param.editorial}" pattern="[a-zA-Z\,]{0,50}" title="Solo debe ingresar texto sin acento y maximo 50 caracteres"></br></br>
             <input type="SUBMIT" name="actualizar" value="Actualizar" class="boton">
         </form>
         <c:if test="${empty param.titulo or empty param.autor or empty param.editorial or empty param.isbn}">

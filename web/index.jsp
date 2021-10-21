@@ -11,12 +11,21 @@
 <%@ include file="fuentedatos.jsp" %>
 <c:set var="pageId" value="Index" />
 <c:set var="standalone" value="not" />
-<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Biblioteca</title>
+        <meta name="author" content="Miguel Angel Amaya Rodriguez">
+        <meta name="author" content="Christian Javier Ayala Guerra">
+        <meta name="author" content="Diego José Ayala Guerra">
+        <meta name="author" content="Luis Alonso Cornejo Jiménez">
+        <meta name="author" content="Carolina Isabel Pineda Delgado">
+        <meta name="author" content="José Gustavo Pineda Delgado">
+        <meta name="author" content="William Enrique Vásquez Mancia">
+        <meta name="keywords" content="JSP, GUIA 55ab">
+        <meta name="description" content="Guia 55ab index.jsp">
+        <link rel="stylesheet" href="public/css/sytle.css">
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <body>
@@ -42,11 +51,11 @@
 
         <c:if test="${sessionScope.nivel eq 1}">
         <form name="insertar" method="post" action="javascript:insertar();" class="forminsert">
-            ISBN: <input type="text" name="isbn">
-            Titulo: <input type="text" name="titulo">
-            Autor: <input type="text" name="autor">
-            Editorial: <input type="text" name="editorial">
-            <input type="SUBMIT" name="enviar" value="Enviar">
+            ISBN: <input type="text" name="isbn" pattern="[0-9]{13}" required title="Debe ingresar 13 digitos">
+            Titulo: <input type="text" name="titulo" pattern="[a-zA-Z0-9\,]{0,50}" title="Solo debe ingresar texto y maximo 50 caracteres">
+            Autor: <input type="text" name="autor" pattern="[a-zA-Z\,]{0,50}" title="Solo debe ingresar texto sin acento y maximo 50 caracteres">
+            Editorial: <input type="text" name="editorial" pattern="[a-zA-Z\,]{0,50}" title="Solo debe ingresar texto sin acento y maximo 50 caracteres">
+            <input type="SUBMIT" name="enviar" value="Enviar" class="boton">
         </form>
         </c:if>
         <sql:query dataSource="${Books}" var="data">
@@ -55,10 +64,10 @@
         <table>
             <tr>
                 <th>Id</th>
-                <th>isbn</th>
-                <th>titulo</th>
-                <th>autor</th>
-                <th>editorial</th>
+                <th>Isbn</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Editorial</th>
                 <c:if test="${sessionScope.nivel eq 2}">
                 <th colspan="2">Acciones</th>
                 </c:if>

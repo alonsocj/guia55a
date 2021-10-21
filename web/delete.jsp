@@ -11,12 +11,21 @@
 <%@ include file="fuentedatos.jsp" %>
 <c:set var="pageId" value="Eliminar" />
 <c:set var="standalone" value="not" />
-<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Eliminar</title>
+        <meta name="author" content="Miguel Angel Amaya Rodriguez">
+        <meta name="author" content="Christian Javier Ayala Guerra">
+        <meta name="author" content="Diego José Ayala Guerra">
+        <meta name="author" content="Luis Alonso Cornejo Jiménez">
+        <meta name="author" content="Carolina Isabel Pineda Delgado">
+        <meta name="author" content="José Gustavo Pineda Delgado">
+        <meta name="author" content="William Enrique Vásquez Mancia">
+        <meta name="keywords" content="JSP, GUIA 55ab">
+        <meta name="description" content="Guia 55ab delete.jsp">
+        <link rel="stylesheet" href="public/css/sytle.css">
     </head>
     <body>
         <h1 class="h1title">Eliminación de libro</h1>
