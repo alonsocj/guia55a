@@ -24,7 +24,7 @@
         <nav class="navbar navbar-dark bg-dark">
             <a></a>
             <c:if test="${empty sessionScope.user or sessionScope.user eq 'Anonimo'}">
-                <a style="color:white" href="frmlogin.jsp" class="">Iniciar Session</a>  
+                <a style="color:white" href="frmlogin.jsp" class="">Iniciar Sesion</a>  
             </c:if>
 
             <c:if test="${not empty sessionScope.user}">
