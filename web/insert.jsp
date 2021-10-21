@@ -11,6 +11,7 @@
 <%@ include file="fuentedatos.jsp" %>
 <c:set var="pageId" value="Insertar" />
 <c:set var="standalone" value="not" />
+<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,12 +38,12 @@
             <sql:param value="${param.autor}"/>
             <sql:param value="${param.editorial}"/>
         </sql:update>
-        <h1>Se ha registrado exitosamente el libro:</h1>
-        <p>ISBN: ${param.isbn}</p>
-        <p>Titulo: ${param.titulo}</p>
-        <p>Autor: ${param.autor}</p>
-        <p>Editorial: ${param.editorial}</p>
-        <a href="index.jsp">ACEPTAR</a>
+        <h1 class="h1title">Se ha registrado exitosamente el libro:</h1>
+        <p class="resultinsert">ISBN: ${param.isbn}</p>
+        <p class="resultinsert">Titulo: ${param.titulo}</p>
+        <p class="resultinsert">Autor: ${param.autor}</p>
+        <p class="resultinsert">Editorial: ${param.editorial}</p>
+        <a href="index.jsp" class="linkaceptar">ACEPTAR</a>
        
         
     </body>

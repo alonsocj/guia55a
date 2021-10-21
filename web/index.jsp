@@ -38,10 +38,10 @@
               </c:if>
           </c:if>
         </nav><br>         
-        <h1>Biblioteca del Grupo 5 TPI115</h1>
+        <h1 class="biblioteca">Biblioteca del Grupo 5 TPI115</h1>
 
         <c:if test="${sessionScope.nivel eq 1}">
-        <form name="insertar" method="post" action="javascript:insertar();">
+        <form name="insertar" method="post" action="javascript:insertar();" class="forminsert">
             ISBN: <input type="text" name="isbn">
             Titulo: <input type="text" name="titulo">
             Autor: <input type="text" name="autor">

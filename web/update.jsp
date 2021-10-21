@@ -19,7 +19,7 @@
         <title>Actualizar Registro</title>
     </head>
     <body>
-        <h1>Actualizar Registro</h1>
+        <h1 class="h1title">Actualizar Registro</h1>
         <c:if test="${empty param.titulo or empty param.autor or empty param.editorial or empty param.isbn}">
             <c:redirect url="error.jsp">
                 <c:param name="tipo" value="parametro"/>
@@ -44,13 +44,13 @@
             SELECT * from libros;
         </sql:query>
             
-            <p>Se ha Actualizado El siguiente libro:</p>
-            <p>ISBN: <c:out value="${param.isbn}"/></p>
-            <p>Titulo: <c:out value="${param.titulo}"/></p>
-            <p>Autor: <c:out value="${param.autor}"/></p>
-            <p>Editorial: <c:out value="${param.editorial}"/></p>
+            <p class="resultupdate">Se ha Actualizado El siguiente libro:</p>
+            <p class="resultupdate">ISBN: <c:out value="${param.isbn}"/></p>
+            <p class="resultupdate">Titulo: <c:out value="${param.titulo}"/></p>
+            <p class="resultupdate">Autor: <c:out value="${param.autor}"/></p>
+            <p class="resultupdate">Editorial: <c:out value="${param.editorial}"/></p>
         
-        <a href="index.jsp">Aceptar</a>
+        <a href="index.jsp" class="linkaceptar">Aceptar</a>
             
     </body>
 </html>

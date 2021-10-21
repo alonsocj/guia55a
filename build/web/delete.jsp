@@ -11,6 +11,7 @@
 <%@ include file="fuentedatos.jsp" %>
 <c:set var="pageId" value="Eliminar" />
 <c:set var="standalone" value="not" />
+<link rel="stylesheet" href="public/css/sytle.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,13 +19,13 @@
         <title>Eliminar</title>
     </head>
     <body>
-        <h1>Eliminación de libro</h1>
-        <p>Se ha eliminado exitosamente el libro:</p>
-        <p>Id: <c:out value = "${param.Id}"/></p>
-        <p>ISBN: <c:out value = "${param.ISBN}"/></p>
-        <p>Título: <c:out value = "${param.Titulo}"/></p>
-        <p>Autor: <c:out value = "${param.Autor}"/></p>
-        <p>Editorial: <c:out value = "${param.Editorial}"/></p>
+        <h1 class="h1title">Eliminación de libro</h1>
+        <p class="resultdelete">Se ha eliminado exitosamente el libro:</p>
+        <p class="resultdelete">Id: <c:out value = "${param.Id}"/></p>
+        <p class="resultdelete">ISBN: <c:out value = "${param.ISBN}"/></p>
+        <p class="resultdelete">Título: <c:out value = "${param.Titulo}"/></p>
+        <p class="resultdelete">Autor: <c:out value = "${param.Autor}"/></p>
+        <p class="resultdelete">Editorial: <c:out value = "${param.Editorial}"/></p>
         
         <c:if test="${empty param.ISBN}">
             <c:redirect url="error.jsp">
@@ -42,7 +43,7 @@
             DELETE FROM libros WHERE isbn=?;
             <sql:param value="${param.ISBN}"/>
         </sql:update>
-        <a href="index.jsp">ACEPTAR</a>
+        <a href="index.jsp" class="linkaceptar">ACEPTAR</a>
         
     </body>
     </body>
