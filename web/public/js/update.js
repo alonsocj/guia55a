@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-function update() {
+function actualizar() {
             var isbn = document.getElementsByName("isbn")[0].value.toString();            
             var titulo = document.getElementsByName("titulo")[0].value;
             var autor = document.getElementsByName("autor")[0].value;
