@@ -44,7 +44,14 @@
             <sql:param value="${param.Usuario}"/>
             <sql:param value="${param.Password}"/>
     </sql:query>
-            
-    
+    <c:set var="user" value="${datos.rows[0].login}" scope="session" />
+        <c:set var="nombre" value="${datos.rows[0].nombre}" scope="session" />
+        <c:set var="nivel" value="${datos.rows[0].nivel}" scope="session" />
+        <p style="color:red;"><br><br>En unos segundos se redirijirá a index</p>
+                <script>
+            setTimeout(function () {
+                location.href = "index.jsp";
+            }, 5000);
+        </script>
     </body>
 </html>

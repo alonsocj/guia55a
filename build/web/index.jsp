@@ -16,6 +16,18 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <c:if test="${not empty sessionScope.user}">
+              <c:if test="${sessionScope.user != 'Anonimo'}">
+              <div style="color:blue;font-size:5mm;">
+                  Usuario: ${sessionScope.user}</div><br>
+                  <a href="logout.jsp">Logout</a>
+              </c:if>
+          </c:if>
+         <c:if test="${empty sessionScope.user or sessionScope.user eq 'Anonimo'}">
+          <span style="color:brown;font-size:5mm;">
+              <a href="frmlogin.jsp">Login</a>
+        </span>
+        </c:if>
         <h1>Hello World!</h1>
         <form name="insertar" method="post" action="javascript:insertar();">
             ISBN: <input type="text" name="isbn">

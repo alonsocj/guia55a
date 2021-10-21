@@ -8,7 +8,7 @@
         <title>CERRAR SESION</title>
     </head>
     <body>
-        <h1>ACABA DE CERRAR SESION, esto se hace eliminando o vaciando las variables de sesión.</h1>
+        <h1>Cerrando sesión.</h1>
         <c:set var="user" value="" scope="session" />
         <c:set var="nombre" value="" scope="session" />
         <c:set var="nivel" value="-1" scope="session" />
